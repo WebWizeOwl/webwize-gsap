@@ -103,7 +103,7 @@ window.addEventListener('load', function() {
     },
     {
       scale: 0.8,
-    }
+    }, 0
   )
 
   growShrinkTimeline.fromTo(
@@ -113,7 +113,7 @@ window.addEventListener('load', function() {
     },
     {
       scale: 1.15,
-    }
+    }, 0
   )
   
 
