@@ -1,6 +1,10 @@
 window.addEventListener('load', function() {
+
   
-    let loadTimeline = gsap.timeline();
+  // Timelines de chargement de page
+  let loadTimeline = gsap.timeline();
+  let loopTimelineBreathing = gsap.timeline({repeat: 4, yoyo: true});
+  
   // Anime l'affichage de l'élément en le faisant apparaitre en glissant vers le haut
   loadTimeline.from(
     ".headline-component", 
@@ -35,3 +39,12 @@ window.addEventListener('load', function() {
     1.5
   )
 
+
+loopTimelineBreathing.to(
+  ".cours_nos-cours-d-equitation_image",
+  {
+    y: "3rem",
+    duration: 1,
+    ease: "power1.inOut"
+  }
+)
