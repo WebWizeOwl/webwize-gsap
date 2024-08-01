@@ -100,7 +100,8 @@ window.addEventListener('load', function() {
     ".symetric-shrink",
     {
       scale: 0.9,
-      rotationY: 200,
+      rotationY: 360,
+      rotationX: 360,
     }, 0
   )
 
@@ -108,7 +109,6 @@ window.addEventListener('load', function() {
     ".symetric-grow",
     {
       scale: 1.1,
-      rotationY: -200,
     }, 0
   )
   
