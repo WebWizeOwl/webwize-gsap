@@ -21,7 +21,7 @@ window.addEventListener('load', function() {
   );
 
   gsap.to(
-    ".scaling-button",
+    ".scaling-fadein",
     {
       scale: 1,
       opacity: 1,
