@@ -8,10 +8,11 @@ window.addEventListener('load', function() {
     {
       scrollTrigger: 
         {
-          trigger: ".staggered_fadein-wrapper", 
+          trigger: ".section-staggered_fade_in_animation", 
           start: "top center", 
           end: "bottom bottom", 
           markers: true,
+          scrub: true,
         }
     }
   )
