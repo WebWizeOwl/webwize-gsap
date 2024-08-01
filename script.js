@@ -84,7 +84,7 @@ window.addEventListener('load', function() {
   });
 
   // ANIMATION AU SCROLL D'AGRANDISSEMENT DE COLONNE DE GAUCHE ET DE RAPEUTISSEMENT DE COLONNE DE DROITE
-  let growShrinkTimeLine = gsap.timeline(
+  let growShrinkTimeline = gsap.timeline(
     {
       scrollTrigger : {
         trigger: ".section-symetric_shrink_right_and_grow-left",
@@ -96,7 +96,7 @@ window.addEventListener('load', function() {
     }
   )
 
-  growShrinkTimeLine.fromTo(
+  growShrinkTimeline.fromTo(
     ".symetric-shrink",
     {
       scale: 1.15,
@@ -106,7 +106,7 @@ window.addEventListener('load', function() {
     }
   )
 
-  growShrinkTimeLine.fromTo(
+  growShrinkTimeline.fromTo(
     ".symetric-grow",
     {
       scale: 0.8,
