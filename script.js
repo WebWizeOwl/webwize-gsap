@@ -88,8 +88,8 @@ window.addEventListener('load', function() {
     {
       scrollTrigger : {
         trigger: ".section-symetric_shrink_right_and_grow-left",
-        start: "top 30%",
-        end: "bottom bottom",
+        start: "top 80%",
+        end: "80% 50%",
         markers: true,
         scrub: 2,
       }
