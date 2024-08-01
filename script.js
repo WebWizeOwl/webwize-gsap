@@ -1,4 +1,11 @@
 window.addEventListener('load', function() {
+  
+  gsap.set(
+    ".scaling-button",
+    {
+      scale: 0,
+    }
+  );
 
   let loadTimeline = gsap.timeline();
   // Anime l'affichage de l'élément en le faisant apparaitre en glissant vers le haut
@@ -12,12 +19,13 @@ window.addEventListener('load', function() {
     }
   );
 
-  loadTimeline.to(
+  gsap.to(
     ".scaling-button",
     {
-      scale: 2,
+      scale: 1,
     }
   )
+
   // Apparition d'image
   loadTimeline.from(
     ".cours_nos-cours-d-equitation_image",
