@@ -17,8 +17,7 @@ window.addEventListener('load', function() {
     {
       scale: 0,
       opacity: 0,
-    },
-    2
+    }
   )
 
   // Apparition d'image
