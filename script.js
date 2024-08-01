@@ -11,15 +11,7 @@ window.addEventListener('load', function() {
       ease: "power4.out",
     }
   );
-
-  gsap.from(
-    ".scaling-fadein",
-    {
-      scale: 0,
-      opacity: 0,
-    }
-  )
-
+  
   // Apparition d'image
   loadTimeline.from(
     ".cours_nos-cours-d-equitation_image",
@@ -31,3 +23,13 @@ window.addEventListener('load', function() {
     }
   )
 });
+
+  // Apparition scalin-fadein
+  gsap.from(
+    ".scaling-fadein",
+    {
+      scale: 0,
+      opacity: 0,
+    }
+  )
+
