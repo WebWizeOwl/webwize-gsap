@@ -82,6 +82,41 @@ window.addEventListener('load', function() {
       ease: "power4.out",
     });
   });
+
+  // ANIMATION AU SCROLL D'AGRANDISSEMENT DE COLONNE DE GAUCHE ET DE RAPEUTISSEMENT DE COLONNE DE DROITE
+  let growShrinkTimeLine = gsap.timeline(
+    {
+      scrollTrigger : ".section-symetric_shrink_right_and_grow-left",
+      start: "top center",
+      end: "bottom bottom",
+      markers: true,
+      scrub: 2,
+    }
+  )
+
+  growShrinkTimeLine.fromTo(
+    ".symetric-shrink",
+    {
+      scale: 1.15,
+    },
+    {
+      scale: 0.8,
+    }
+  )
+
+  growShrinkTimeLine.fromTo(
+    ".symetric-grow",
+    {
+      scale: 0.8,
+    },
+    {
+      scale: 1.15,
+    }
+  )
+  
+
+  
+  
   
   // FONCTION D'ANIMATION DE TEXTE EFFET MANUSCRIT / ÉCRITURE PROGRESSIVE
   function animateText(element, delay = 0) {
