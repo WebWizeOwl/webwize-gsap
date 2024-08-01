@@ -4,11 +4,12 @@ window.addEventListener('load', function() {
   // Timelines de chargement de page
   let loadTimeline = gsap.timeline();
   let loopTimelineBreathing = gsap.timeline({repeat: -1, yoyo: true, paused: true});
-  let staggeredFadeInTimeline = gsap.timeline(
+  $(".section-staggered_fade_in_animation").each(function(){
+    let staggeredFadeInTimeline = gsap.timeline(
     {
       scrollTrigger: 
         {
-          trigger: ".section-staggered_fade_in_animation", 
+          trigger: $(this), 
           start: "top bottom", 
           end: "top 65%", 
           markers: false,
@@ -17,6 +18,8 @@ window.addEventListener('load', function() {
         }
     }
   )
+  })
+  
   let floatingImageCoupleTimeline = gsap.timeline(
     {
       scrollTrigger: {
@@ -74,7 +77,7 @@ window.addEventListener('load', function() {
   )
 
   staggeredFadeInTimeline.from(
-    ".staggered_fadein-wrapper", {
+    $(this).find(".staggered_fadein-wrapper"), {
       opacity: 0,
       scale: 0.7,
       duration: 0.5,
