@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
         {
           trigger: ".section-staggered_fade_in_animation", 
           start: "top 40%", 
-          end: "bottom 150%", 
+          end: "bottom bottom", 
           markers: true,
           // play pause resume reset restart complete reverse none
           toggleActions: "play reset play reset",
