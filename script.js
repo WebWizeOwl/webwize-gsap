@@ -38,7 +38,7 @@ window.addEventListener('load', function() {
         trigger: ".section_floating_image_couple",
         start: "top 30%",
         end: "bottom",
-        markers: true,
+        markers: false,
         scrub: 2,
       }    
     }
