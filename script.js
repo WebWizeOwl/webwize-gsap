@@ -97,7 +97,8 @@ window.addEventListener('load', function() {
     ".floating-image_2",
     {
       y: "-3rem"
-    }
+    },
+    0
   )
 
   
