@@ -10,30 +10,28 @@ window.addEventListener('load', function() {
     }
   );
 
+  // Animation de scale-in et de fade-in
   gsap.fromTo(
     ".scaling-button", 
     {
       scale: 0,
+      opacity: 0,
     },
     {
       scale: 1,
+      opacity: 1,
       duration: 1,
       ease: "power4.out"
     }
   );
 
+  
+  // Apparition d'image
   gsap.from(
-    ".cours_types-de-cours-proposes_item", 
+    ".cours_nos-cours-d-equitation_image",
     {
-      scale: 0,
       opacity: 0,
-      stagger: 
-      {
-        amount: 1,
-        from: "random"
-      },
-      duration: 0.5,
-      ease: "power4.out"
+      borderRadius: "50%",
     }
-  );
+  )
 });
