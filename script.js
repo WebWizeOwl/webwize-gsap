@@ -13,15 +13,11 @@ window.addEventListener('load', function() {
   );
 
   // Animation de scale-in et de fade-in
-  loadTimeline.fromTo(
+  loadTimeline.from(
     ".scaling-button", 
     {
       scale: 0,
       opacity: 0,
-    },
-    {
-      scale: 1,
-      opacity: 1,
       duration: 1,
       ease: "power4.out"
     }
