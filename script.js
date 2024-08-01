@@ -57,8 +57,8 @@ window.addEventListener('load', function() {
     let floatingImageCoupleTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: $(this),
-        start: "top 30%",
-        end: "bottom",
+        start: "top center",
+        end: "bottom bottom",
         markers: false,
         scrub: 2,
       }
