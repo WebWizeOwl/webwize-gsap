@@ -30,6 +30,7 @@ window.addEventListener('load', function() {
     {
       scale: 0,
       opacity: 0,
-    }
+    },
+    1.5
   )
 
