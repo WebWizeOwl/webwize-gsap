@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+twindow.addEventListener('load', function() {
 
   
   // Timelines de chargement de page
@@ -9,10 +9,11 @@ window.addEventListener('load', function() {
       scrollTrigger: 
         {
           trigger: ".section-staggered_fade_in_animation", 
-          start: "top center", 
-          end: "bottom bottom", 
+          start: "top 40%", 
+          end: "bottom 150%", 
           markers: true,
-          scrub: 2,
+          // play pause resume reset restart complete reverse none
+          toggleActions: "play reset play reset",
         }
     }
   )
@@ -69,7 +70,7 @@ window.addEventListener('load', function() {
       stagger: 
       {
         each: 0.25,
-        from: "random",
+        from: "center",
       }
     }
   )
