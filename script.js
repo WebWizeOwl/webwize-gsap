@@ -95,19 +95,20 @@ window.addEventListener('load', function() {
       }
     }
   )
-
-  growShrinkTimeline.fromTo(
+  gsap.set(
     ".symetric-shrink",
-    {
-      scale: 0.7,
-      rotationY: 180,
-      rotationX: 180,
-    },
+      {
+        scale: 0.7,
+        rotationY: 180,
+        rotationX: 180,
+      }
+  )
+  growShrinkTimeline.to(
+    ".symetric-shrink",
     {
       scale: 1,
       rotationY: 0,
       rotationX: 0,
-      duration: 1.5,
     }
   )
 
