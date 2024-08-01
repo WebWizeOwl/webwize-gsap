@@ -14,7 +14,6 @@ gsap.from("#delayed-scale",
     scale: 0,
     duration: 1,
     ease: "power4.out"}
-
   }
 )
 
