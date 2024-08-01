@@ -66,7 +66,7 @@ window.addEventListener('load', function() {
     
     floatingImageCoupleTimeline.to($(this).find(".floating-image_1"), {
       y: "-6rem"
-    });
+    }, 0);
     
     floatingImageCoupleTimeline.to($(this).find(".floating-image_2"), {
       y: "-3rem"
