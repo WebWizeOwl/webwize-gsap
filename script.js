@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
       opacity: 0,
       y: "6rem",
       duration: 1,
-      ease: "power4.out"
+      ease: "power4.out",
     }
   );
 
@@ -16,11 +16,12 @@ window.addEventListener('load', function() {
   loadTimeline.from(
     ".scaling-button", 
     {
-      scale: 0,
-      opacity: 0,
+      scale: 0.5,
+      opacity: 0.5,
       duration: 1,
-      ease: "power4.out"
-    }
+      ease: "power4.out",
+    },
+    "<0.5"
   );
 
   
@@ -31,7 +32,8 @@ window.addEventListener('load', function() {
       opacity: 0,
       borderRadius: "50%",
       duration: 1,
+      ease: "power4.out",
     },
-    4
+    "<0.5"
   )
 });
