@@ -1,9 +1,35 @@
 window.addEventListener('load', function() {
 
-  // TIMELINE 
+  // TIMELINE DE CHARGEMENT DE PAGE
+  let loadTimeline = gsap.timeline();
+  
+  // Animation du composant titre principal
+  loadTimeline.from(".headline-component", {
+    opacity: 0,
+    y: "6rem",
+    duration: 1,
+    ease: "power4.out",
+  });
+  
+  // ANIMATION D'APPARITION D'IMAGE AVEC EFFET DE RESPIRATION EN BOUCLE
   let loopTimelineBreathing = gsap.timeline({repeat: -1, yoyo: true, paused: true});
   
-  // Staggered fade-in animations for multiple sections
+  loadTimeline.from(".big_image_appearance-wrapper", {
+    opacity: 0,
+    borderRadius: "50%",
+    duration: 1,
+    ease: "power4.out",
+    onComplete: loopTimelineBreathing.play(),
+  }, "<0.5");
+
+  // Effet de respiration en boucle pour plusieurs images
+  loopTimelineBreathing.to(".big_image_appearance-wrapper", {
+    y: "-1rem",
+    duration: 2,
+    ease: "sine.inOut",
+  });
+
+  // ANIMATION FADE-IN PAR ÉCHELLE POUR PLUSIEURS SECTIONS
   $(".section-staggered_fade_in_animation").each(function() {
     let staggeredFadeInTimeline = gsap.timeline({
       scrollTrigger: {
@@ -25,8 +51,8 @@ window.addEventListener('load', function() {
       }
     });
   });
-  
-  // EFFET SMOOTH AU SCROLL DE 2 IMAGES
+
+  // EFFET DE DÉFILEMENT EN DOUCEUR DE 2 IMAGES
   $(".section_floating_image_couple").each(function() {
     let floatingImageCoupleTimeline = gsap.timeline({
       scrollTrigger: {
@@ -47,26 +73,7 @@ window.addEventListener('load', function() {
     }, 0);
   });
   
-  // TIMELINE DE CHARGEMENT DE PAGE
-  let loadTimeline = gsap.timeline();
-  // Headline component animation
-  loadTimeline.from(".headline-component", {
-    opacity: 0,
-    y: "6rem",
-    duration: 1,
-    ease: "power4.out",
-  });
-  
-  // Image appearance animation with looping breathing effect
-  loadTimeline.from(".big_image_appearance-wrapper", {
-    opacity: 0,
-    borderRadius: "50%",
-    duration: 1,
-    ease: "power4.out",
-    onComplete: loopTimelineBreathing.play(),
-  }, "<0.5");
-  
-  // Scaling fade-in animations for multiple elements
+  // ANIMATIONS FADE-IN AVEC SCALING POUR PLUSIEURS ÉLÉMENTS
   $(".scaling-fadein").each(function() {
     gsap.from($(this), {
       scale: 0,
@@ -76,65 +83,57 @@ window.addEventListener('load', function() {
     });
   });
   
-  // Looping breathing effect for multiple images
-  loopTimelineBreathing.to(".big_image_appearance-wrapper", {
-    y: "-1rem",
-    duration: 2,
-    ease: "sine.inOut",
+  // FONCTION D'ANIMATION DE TEXTE EFFET MANUSCRIT / ÉCRITURE PROGRESSIVE
+  function animateText(element, delay = 0) {
+    const words = element.textContent.split(" ");
+    element.innerHTML = ""; // Efface le contenu textuel
+
+    // Enveloppe chaque mot dans un span et l'ajoute à l'élément
+    words.forEach(word => {
+      const span = document.createElement("span");
+      span.textContent = word + " ";
+      element.appendChild(span);
+    });
+
+    // Crée une timeline GSAP
+    let tl = gsap.timeline({ delay: delay });
+
+    // Ajoute chaque animation de mot à la timeline
+    tl.from(element.querySelectorAll("span"), {
+      opacity: 0,
+      y: 20,
+      ease: "power2.out",
+      duration: 0.5,
+      stagger: { amount: 2 }
+    });
+  }
+
+  // Fonction pour réinitialiser le texte
+  function resetText(element) {
+    gsap.set(element.querySelectorAll("span"), { opacity: 0, y: 20 });
+  }
+
+  // Callback de l'Intersection Observer
+  function intersectionCallback(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.hasAttribute('data-delayed-handwritten-effect') ? 1.2 : 0;
+        animateText(entry.target, delay);
+      } else {
+        resetText(entry.target);
+      }
+    });
+  }
+
+  // Configuration de l'Intersection Observer
+  const observer = new IntersectionObserver(intersectionCallback, {
+    threshold: 0.1
   });
 
-  // FONCTION D'ANIMATION DE TEXTE EFFET MANUSCRIT / ECRITURE PROGRESSIVE
-    function animateText(element, delay = 0) {
-      const words = element.textContent.split(" ");
-      element.innerHTML = ""; // Clear the text content
-
-      // Wrap each word in a span and append to the element
-      words.forEach(word => {
-        const span = document.createElement("span");
-        span.textContent = word + " ";
-        element.appendChild(span);
-      });
-
-      // Create a GSAP timeline
-      let tl = gsap.timeline({ delay: delay });
-
-      // Add each word animation to the timeline
-      tl.from(element.querySelectorAll("span"), {
-        opacity: 0,
-        y: 20,
-        ease: "power2.out",
-        duration: 0.5,
-        stagger: {amount: 2}
-      });
-    }
-
-    // Function to reset text
-    function resetText(element) {
-      gsap.set(element.querySelectorAll("span"), {opacity: 0, y: 20});
-    }
-
-    // Intersection Observer callback
-    function intersectionCallback(entries, observer) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.hasAttribute('data-delayed-handwritten-effect') ? 1.2 : 0;
-          animateText(entry.target, delay);
-        } else {
-          resetText(entry.target);
-        }
-      });
-    }
-
-    // Set up Intersection Observer
-    const observer = new IntersectionObserver(intersectionCallback, {
-      threshold: 0.1
-    });
-
-    // Observe all elements with the custom attributes
-    document.querySelectorAll("[data-handwritten-effect='true'], [data-delayed-handwritten-effect='true']").forEach(element => {
-      resetText(element); // Ensure initial state is reset
-      observer.observe(element);
-    });
+  // Observer tous les éléments avec les attributs personnalisés
+  document.querySelectorAll("[data-handwritten-effect='true'], [data-delayed-handwritten-effect='true']").forEach(element => {
+    resetText(element); // Assure que l'état initial est réinitialisé
+    observer.observe(element);
+  });
 
 });
-
