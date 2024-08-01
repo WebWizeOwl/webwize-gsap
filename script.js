@@ -44,7 +44,7 @@ window.addEventListener('load', function() {
     ".cours_nos-cours-d-equitation_image",
     {
       y: "-1rem",
-      duration: 2.5,
+      duration: 2,
       ease: "sine.inOut",
     }
   )
