@@ -1,14 +1,6 @@
 window.addEventListener('load', function() {
   
-  gsap.set(
-    ".scaling-button",
-    {
-      scale: 0,
-      opacity: 0,
-    }
-  );
-
-  let loadTimeline = gsap.timeline();
+    let loadTimeline = gsap.timeline();
   // Anime l'affichage de l'élément en le faisant apparaitre en glissant vers le haut
   loadTimeline.from(
     ".headline-component", 
@@ -20,11 +12,11 @@ window.addEventListener('load', function() {
     }
   );
 
-  gsap.to(
+  gsap.from(
     ".scaling-fadein",
     {
-      scale: 1,
-      opacity: 1,
+      scale: 0,
+      opacity: 0,
     },
     2
   )
