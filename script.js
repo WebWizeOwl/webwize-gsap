@@ -24,7 +24,7 @@ gsap.from(
     opacity: 0,
     stagger: {amount: 5, from: "random"},
     duration: 1,
-    ease: "power4.out"}
+    ease: "power4.out"
   }
 )
 
