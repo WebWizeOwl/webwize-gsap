@@ -1,6 +1,8 @@
 window.addEventListener('load', function() {
+
+  let loadTimeline = gsap.timeline();
   // Anime l'affichage de l'élément en le faisant apparaitre en glissant vers le haut
-  gsap.from(
+  loadTimeline.from(
     ".headline-component", 
     {
       opacity: 0,
@@ -11,7 +13,7 @@ window.addEventListener('load', function() {
   );
 
   // Animation de scale-in et de fade-in
-  gsap.fromTo(
+  loadTimeline.fromTo(
     ".scaling-button", 
     {
       scale: 0,
@@ -27,7 +29,7 @@ window.addEventListener('load', function() {
 
   
   // Apparition d'image
-  gsap.from(
+  loadTimeline.from(
     ".cours_nos-cours-d-equitation_image",
     {
       opacity: 0,
