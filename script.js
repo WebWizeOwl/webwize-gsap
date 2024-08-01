@@ -12,19 +12,12 @@ window.addEventListener('load', function() {
     }
   );
 
-  // Animation de scale-in et de fade-in
-  loadTimeline.from(
-    ".scaling-button", 
+  loadTimeline.to(
+    ".scaling-button",
     {
-      scale: 0.5,
-      opacity: 0.5,
-      duration: 1,
-      ease: "power4.out",
-    },
-    "<0.5"
-  );
-
-  
+      scale: 2,
+    }
+  )
   // Apparition d'image
   loadTimeline.from(
     ".cours_nos-cours-d-equitation_image",
@@ -33,7 +26,6 @@ window.addEventListener('load', function() {
       borderRadius: "50%",
       duration: 1,
       ease: "power4.out",
-    },
-    "<0.5"
+    }
   )
 });
