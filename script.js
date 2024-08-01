@@ -34,6 +34,7 @@ window.addEventListener('load', function() {
     {
       opacity: 0,
       borderRadius: "50%",
+      duration:1,
     }
   )
 });
