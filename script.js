@@ -20,7 +20,8 @@ window.addEventListener('load', function() {
       borderRadius: "50%",
       duration: 1,
       ease: "power4.out",
-    }
+    },
+    "<0.5"
   )
 });
 
@@ -31,6 +32,6 @@ window.addEventListener('load', function() {
       scale: 0,
       opacity: 0,
     },
-    1.5
+    2.5
   )
 
