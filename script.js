@@ -1,7 +1,6 @@
 window.addEventListener('load', function() {
-  
-  // Timelines de chargement de page
-  let loadTimeline = gsap.timeline();
+
+  // TIMELINE 
   let loopTimelineBreathing = gsap.timeline({repeat: -1, yoyo: true, paused: true});
   
   // Staggered fade-in animations for multiple sections
@@ -27,7 +26,7 @@ window.addEventListener('load', function() {
     });
   });
   
-  // Floating image couple animations for multiple sections
+  // EFFET SMOOTH AU SCROLL DE 2 IMAGES
   $(".section_floating_image_couple").each(function() {
     let floatingImageCoupleTimeline = gsap.timeline({
       scrollTrigger: {
@@ -48,6 +47,8 @@ window.addEventListener('load', function() {
     }, 0);
   });
   
+  // TIMELINE DE CHARGEMENT DE PAGE
+  let loadTimeline = gsap.timeline();
   // Headline component animation
   loadTimeline.from(".headline-component", {
     opacity: 0,
@@ -81,6 +82,59 @@ window.addEventListener('load', function() {
     duration: 2,
     ease: "sine.inOut",
   });
+
+  // FONCTION D'ANIMATION DE TEXTE EFFET MANUSCRIT / ECRITURE PROGRESSIVE
+    function animateText(element, delay = 0) {
+      const words = element.textContent.split(" ");
+      element.innerHTML = ""; // Clear the text content
+
+      // Wrap each word in a span and append to the element
+      words.forEach(word => {
+        const span = document.createElement("span");
+        span.textContent = word + " ";
+        element.appendChild(span);
+      });
+
+      // Create a GSAP timeline
+      let tl = gsap.timeline({ delay: delay });
+
+      // Add each word animation to the timeline
+      tl.from(element.querySelectorAll("span"), {
+        opacity: 0,
+        y: 20,
+        ease: "power2.out",
+        duration: 0.5,
+        stagger: {amount: 2}
+      });
+    }
+
+    // Function to reset text
+    function resetText(element) {
+      gsap.set(element.querySelectorAll("span"), {opacity: 0, y: 20});
+    }
+
+    // Intersection Observer callback
+    function intersectionCallback(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.hasAttribute('data-delayed-handwritten-effect') ? 1.2 : 0;
+          animateText(entry.target, delay);
+        } else {
+          resetText(entry.target);
+        }
+      });
+    }
+
+    // Set up Intersection Observer
+    const observer = new IntersectionObserver(intersectionCallback, {
+      threshold: 0.1
+    });
+
+    // Observe all elements with the custom attributes
+    document.querySelectorAll("[data-handwritten-effect='true'], [data-delayed-handwritten-effect='true']").forEach(element => {
+      resetText(element); // Ensure initial state is reset
+      observer.observe(element);
+    });
 
 });
 
