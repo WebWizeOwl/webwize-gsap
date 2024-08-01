@@ -45,7 +45,7 @@ window.addEventListener('load', function() {
     {
       y: "-1rem",
       duration: 2.5,
-      ease: "power1.inOut",
+      ease: "power3.inOut",
     }
   )
 });
