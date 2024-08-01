@@ -3,7 +3,7 @@ window.addEventListener('load', function() {
   
   // Timelines de chargement de page
   let loadTimeline = gsap.timeline();
-  let loopTimelineBreathing = gsap.timeline({repeat: 4, yoyo: true});
+  let loopTimelineBreathing = gsap.timeline({repeat: -1, yoyo: true, paused: true});
   
   // Anime l'affichage de l'élément en le faisant apparaitre en glissant vers le haut
   loadTimeline.from(
@@ -24,6 +24,7 @@ window.addEventListener('load', function() {
       borderRadius: "50%",
       duration: 1,
       ease: "power4.out",
+      onComplete: loopTimelineBreathing.play(),
     },
     "<0.5"
   );
@@ -42,9 +43,9 @@ window.addEventListener('load', function() {
   loopTimelineBreathing.to(
     ".cours_nos-cours-d-equitation_image",
     {
-      y: "3rem",
+      y: "-1rem",
       duration: 1,
-      ease: "power1.inOut"
+      ease: "power1.inOut",
     }
   )
 });
