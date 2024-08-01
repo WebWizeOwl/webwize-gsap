@@ -89,7 +89,7 @@ window.addEventListener('load', function() {
       scrollTrigger : {
         trigger: ".section-symetric_shrink_right_and_grow-left",
         start: "top center",
-        end: "bottom",
+        end: "center bottom",
         markers: true,
         scrub: 2,
       }
@@ -99,8 +99,8 @@ window.addEventListener('load', function() {
     ".symetric-shrink",
       {
         scale: 0.7,
-        rotationY: 180,
-        rotationX: 180,
+        rotationY: 100,
+        rotationX: 80,
       }
   )
   growShrinkTimeline.to(
