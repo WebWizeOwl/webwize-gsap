@@ -26,10 +26,10 @@ gsap.from(
     opacity: 0,
     stagger: 
     {
-      amount: 5,
+      amount: 1,
       from: "random"
     },
-    duration: 1,
+    duration: 0.5,
     ease: "power4.out"
   }
 )
