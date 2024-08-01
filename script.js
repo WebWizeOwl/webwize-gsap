@@ -99,14 +99,15 @@ window.addEventListener('load', function() {
   growShrinkTimeline.to(
     ".symetric-shrink",
     {
-      scale: 1.1,
+      scale: 0.9,
+      rotate : 20,
     }, 0
   )
 
   growShrinkTimeline.to(
     ".symetric-grow",
     {
-      scale: 0.9,
+      scale: 1.1,
     }, 0
   )
   
