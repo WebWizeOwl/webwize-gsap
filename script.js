@@ -1,4 +1,4 @@
-twindow.addEventListener('load', function() {
+window.addEventListener('load', function() {
 
   
   // Timelines de chargement de page
