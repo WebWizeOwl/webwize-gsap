@@ -58,7 +58,7 @@ window.addEventListener('load', function() {
       scrollTrigger: {
         trigger: $(this),
         start: "top center",
-        end: "bottom bottom",
+        end: "bottom",
         markers: false,
         scrub: 2,
       }
