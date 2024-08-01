@@ -11,7 +11,6 @@ gsap.from(
 
 gsap.from("#delayed-scale",
   {
-    delay: 1,
     scale: 0,
     duration: 1,
   }
