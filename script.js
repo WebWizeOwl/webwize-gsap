@@ -13,7 +13,7 @@ window.addEventListener('load', function() {
           end: "top 65%", 
           markers: true,
           // play pause resume reset restart complete reverse none
-          toggleActions: "none play reset reset",
+          toggleActions: "none play none reset",
         }
     }
   )
