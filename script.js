@@ -12,7 +12,7 @@ window.addEventListener('load', function() {
           start: "top center", 
           end: "bottom bottom", 
           markers: true,
-          scrub: true,
+          scrub: 2,
         }
     }
   )
