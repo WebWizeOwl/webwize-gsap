@@ -4,14 +4,7 @@ window.addEventListener('load', function() {
   // Timelines de chargement de page
   let loadTimeline = gsap.timeline();
   let loopTimelineBreathing = gsap.timeline({repeat: -1, yoyo: true, paused: true});
-  let staggeredFadeInTimeline = gsap.timeline(
-    scrollTrigger: {
-      trigger: ".staggered_fadein-wrapper",
-      start: "top center",
-      end: "bottom bottom",
-      markers: true,
-    }
-  );
+  let staggeredFadeInTimeline = gsap.timeline({scrollTrigger: {trigger: ".staggered_fadein-wrapper", start: "top center", end: "bottom bottom", markers: true,}})
   
   // Anime l'affichage de l'élément en le faisant apparaitre en glissant vers le haut
   loadTimeline.from(
