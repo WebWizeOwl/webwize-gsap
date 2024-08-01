@@ -96,19 +96,24 @@ window.addEventListener('load', function() {
     }
   )
 
-  growShrinkTimeline.to(
+  growShrinkTimeline.fromTo(
     ".symetric-shrink",
     {
-      scale: 0.9,
-      rotationY: 360,
-      rotationX: 360,
-    }, 0
+      scale: 0.7,
+      rotationY: 180,
+      rotationX: 180,
+    },
+    {
+      scale: 1,
+      rotationY: 0,
+      rotationX: 0,
+    }
   )
 
   growShrinkTimeline.to(
     ".symetric-grow",
     {
-      scale: 1.1,
+      scale: 1.15,
     }, 0
   )
   
