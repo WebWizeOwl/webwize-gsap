@@ -11,10 +11,21 @@ window.addEventListener('load', function() {
           trigger: ".section-staggered_fade_in_animation", 
           start: "top bottom", 
           end: "top 65%", 
-          markers: true,
+          markers: false,
           // play pause resume reset restart complete reverse none
           toggleActions: "none play none reset",
         }
+    }
+  )
+  let floatingImageCoupleTimeline = gsap.timeline(
+    {
+      scrollTrigger: {
+        trigger: ".section_floating_image_couple",
+        start: "top 30%",
+        end: "bottom",
+        markers: true,
+        scrub: 2,
+      }    
     }
   )
   
@@ -72,6 +83,20 @@ window.addEventListener('load', function() {
         each: 0.25,
         from: "center",
       }
+    }
+  )
+
+  floatingImageCoupleTimeline.to(
+    ".floating-image_1",
+    {
+      y: "-6rem"
+    }
+  )
+
+  floatingImageCoupleTimeline.to(
+    ".floating-image_2",
+    {
+      y: "-3rem"
     }
   )
 
