@@ -18,6 +18,18 @@ window.addEventListener('load', function() {
         }
     }
   )
+     staggeredFadeInTimeline.from(
+    $(this).find(".staggered_fadein-wrapper"), {
+      opacity: 0,
+      scale: 0.7,
+      duration: 0.5,
+      stagger: 
+      {
+        each: 0.25,
+        from: "center",
+      }
+    }
+  )
   })
   
   let floatingImageCoupleTimeline = gsap.timeline(
@@ -76,18 +88,7 @@ window.addEventListener('load', function() {
     }
   )
 
-  staggeredFadeInTimeline.from(
-    $(this).find(".staggered_fadein-wrapper"), {
-      opacity: 0,
-      scale: 0.7,
-      duration: 0.5,
-      stagger: 
-      {
-        each: 0.25,
-        from: "center",
-      }
-    }
-  )
+ 
 
   floatingImageCoupleTimeline.to(
     ".floating-image_1",
