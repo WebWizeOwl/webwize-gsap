@@ -4,6 +4,7 @@ window.addEventListener('load', function() {
   // Timelines de chargement de page
   let loadTimeline = gsap.timeline();
   let loopTimelineBreathing = gsap.timeline({repeat: -1, yoyo: true, paused: true});
+  let scrollTimeline= gsap.timeline();
   
   // Anime l'affichage de l'élément en le faisant apparaitre en glissant vers le haut
   loadTimeline.from(
@@ -48,7 +49,23 @@ window.addEventListener('load', function() {
       ease: "sine.inOut",
     }
   )
+
+  scrollTimeline.from(
+    ".cours_types-de-cours-proposes_item", {
+      opacity: 0,
+      scale: 0.7,
+      duration: 0.5,
+      stagger: 
+      {
+        each: 0.25  
+      }
+    }
+  )
+
+  
 });
+
+
 
 
 
