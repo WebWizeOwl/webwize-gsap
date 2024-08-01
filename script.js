@@ -4,6 +4,7 @@ window.addEventListener('load', function() {
     ".scaling-button",
     {
       scale: 0,
+      opacity: 0,
     }
   );
 
@@ -23,6 +24,7 @@ window.addEventListener('load', function() {
     ".scaling-button",
     {
       scale: 1,
+      opacity: 1,
     }
   )
 
