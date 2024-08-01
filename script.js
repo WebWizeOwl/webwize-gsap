@@ -107,6 +107,7 @@ window.addEventListener('load', function() {
       scale: 1,
       rotationY: 0,
       rotationX: 0,
+      duration: 1.5,
     }
   )
 
