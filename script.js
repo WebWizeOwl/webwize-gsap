@@ -26,8 +26,8 @@ window.addEventListener('load', function() {
       ease: "power4.out",
     },
     "<0.5"
-  )
-});
+  );
+
 
   // Apparition scalin-fadein
   gsap.from(
@@ -37,14 +37,17 @@ window.addEventListener('load', function() {
       opacity: 0,
     },
     1.5
+  );
+  
+  loopTimelineBreathing.to(
+    ".cours_nos-cours-d-equitation_image",
+    {
+      y: "3rem",
+      duration: 1,
+      ease: "power1.inOut"
+    }
   )
+});
 
 
-loopTimelineBreathing.to(
-  ".cours_nos-cours-d-equitation_image",
-  {
-    y: "3rem",
-    duration: 1,
-    ease: "power1.inOut"
-  }
-)
+
