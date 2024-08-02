@@ -18,7 +18,6 @@ window.addEventListener('load', function() {
     ".navbar",
     {
       opacity: 100,
-      flexDirection: row,
       rotateX: 0,
       duration:2.5,
       ease: "elastic.out(1,0.3)",
