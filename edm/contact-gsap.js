@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
     ".navbar",
     {
       rotateY: -90,
-      backgroundColor: #482e33,
+      backgroundColor: "#482e33",
     }
   )
 
