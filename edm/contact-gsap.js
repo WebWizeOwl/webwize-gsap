@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
   doorWingTimeline.set(
     ".navbar",
     {
-      rotateY: -90,
+      rotateX: -90,
       backgroundColor: "#482e33",
     }
   )
@@ -15,7 +15,7 @@ window.addEventListener('load', function() {
   doorWingTimeline.to(
     ".navbar",
     {
-      rotateY: 0,
+      rotateX: 0,
       duration:2.5,
       ease: "elastic.out(1,0.3)",
     }
