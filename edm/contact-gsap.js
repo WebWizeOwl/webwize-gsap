@@ -9,6 +9,7 @@ window.addEventListener('load', function() {
     {
       rotateX: -90,
       backgroundColor: "#482e33",
+      transformOrigin: "top",
     }
   )
 
