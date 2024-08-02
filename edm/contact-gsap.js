@@ -21,6 +21,7 @@ window.addEventListener('load', function() {
       rotateX: 0,
       duration:2.5,
       ease: "elastic.out(1,0.3)",
+      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
     }
   )
   
