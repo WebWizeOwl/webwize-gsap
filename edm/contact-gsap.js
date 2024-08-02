@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
   doorWingTimeline.set(
     ".navbar",
     {
-      display: hidden,
+      display: none,
       rotateX: -90,
       backgroundColor: "#482e33",
       transformOrigin: "top",
