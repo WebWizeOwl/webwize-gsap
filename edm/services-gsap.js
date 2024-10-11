@@ -90,7 +90,7 @@ window.addEventListener('load', function() {
         trigger: ".section-symetric_shrink_right_and_grow-left",
         start: "top 80%",
         end: "80% 50%",
-        markers: true,
+        markers: false,
         scrub: 2,
       }
     }
